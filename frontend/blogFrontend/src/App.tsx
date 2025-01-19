@@ -1,5 +1,5 @@
 import Nav from "./components/Nav";
-import Home from "./pages/home";
+import Home from "./pages/Home";
 import Footer from "./components/Footer";
 import SignUp from "./pages/SignUp";
 import Login from "./pages/Login";
