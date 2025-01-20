@@ -21,6 +21,7 @@ const Login = () => {
             id="email"
             type="email"
             value={email}
+            placeholder="Enter email"
             onChange={(e) => setEmail(e.target.value)}
             required
           />
@@ -31,6 +32,7 @@ const Login = () => {
             id="password"
             type="password"
             value={password}
+            placeholder="Enter password"
             onChange={(e) => setPassword(e.target.value)}
             required
           />
@@ -39,7 +41,8 @@ const Login = () => {
         <div>
           <p>
             {" "}
-            <small>Don't have an account?</small> <Link to="/signup">SignUp</Link>
+            <small>Don't have an account?</small>{" "}
+            <Link to="/signup">SignUp</Link>
           </p>
         </div>
       </form>
