@@ -3,6 +3,7 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 const connectDB = require("./connection");
 const authRoutes = require("./routes/auth");
+const postRoutes = require("./routes/post")
 dotenv.config();
 const app = express();
 connectDB();
@@ -14,6 +15,9 @@ app.use(
 );
 app.use(express.json());
 app.use(cors());
+
 app.use("/auth", authRoutes);
+app.use("/post", postRoutes);
+
 
 app.listen(PORT, () => console.log("listening at port " + PORT));

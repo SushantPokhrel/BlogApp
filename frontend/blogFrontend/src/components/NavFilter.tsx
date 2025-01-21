@@ -7,6 +7,7 @@ const NavFilter: React.FC = () => {
 
   return (
     <div>
+      <div className="ul-filter-sticky">
       <ul className="ul-filter">
         <li>
           <NavLink
@@ -22,7 +23,7 @@ const NavFilter: React.FC = () => {
             to="/home/web-development"
             style={({ isActive }) => (isActive ? activeStyle : {})}
           >
-            Web
+            Web Development
           </NavLink>
         </li>
         <li>
@@ -30,7 +31,7 @@ const NavFilter: React.FC = () => {
             to="/home/app-development"
             style={({ isActive }) => (isActive ? activeStyle : {})}
           >
-            App
+            App Development
           </NavLink>
         </li>
         <li>
@@ -38,10 +39,20 @@ const NavFilter: React.FC = () => {
             to="/home/artificial-intelligence"
             style={({ isActive }) => (isActive ? activeStyle : {})}
           >
-            AI
+            Artificial Intelligence
           </NavLink>
         </li>
+        <li>
+          <NavLink
+            to="/home/data-science"
+            style={({ isActive }) => (isActive ? activeStyle : {})}
+          >
+            Data Science{" "}
+          </NavLink>
+        </li>
+        
       </ul>{" "}
+    </div>
     </div>
   );
 };
