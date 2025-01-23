@@ -42,14 +42,7 @@ const NavFilter: React.FC = () => {
             Artificial Intelligence
           </NavLink>
         </li>
-        <li>
-          <NavLink
-            to="/home/data-science"
-            style={({ isActive }) => (isActive ? activeStyle : {})}
-          >
-            Data Science{" "}
-          </NavLink>
-        </li>
+      
         
       </ul>{" "}
     </div>

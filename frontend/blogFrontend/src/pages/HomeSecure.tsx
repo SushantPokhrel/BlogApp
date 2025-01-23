@@ -21,17 +21,7 @@ const HomeSecure: React.FC = () => {
         autem quod nostrum molestias voluptate mollitia hic iste eveniet eaque
         cumque, aperiam est id debitis cum quis ipsa, adipisci recusandae!Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis dolore
         autem quod nostrum molestias voluptate mollitia hic iste eveniet eaque
-        cumque, aperiam est id debitis cum quis ipsa, adipisci recusandae!Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis dolore
-        autem quod nostrum molestias voluptate mollitia hic iste eveniet eaque
-        cumque, aperiam est id debitis cum quis ipsa, adipisci recusandae!Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis dolore
-        autem quod nostrum molestias voluptate mollitia hic iste eveniet eaque
-        cumque, aperiam est id debitis cum quis ipsa, adipisci recusandae!Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis dolore
-        autem quod nostrum molestias voluptate mollitia hic iste eveniet eaque
-        cumque, aperiam est id debitis cum quis ipsa, adipisci recusandae!Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis dolore
-        autem quod nostrum molestias voluptate mollitia hic iste eveniet eaque
-        cumque, aperiam est id debitis cum quis ipsa, adipisci recusandae!Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis dolore
-        autem quod nostrum molestias voluptate mollitia hic iste eveniet eaque
-        cumque, aperiam est id debitis cum quis ipsa, adipisci recusandae!
+        c
         </div>
       </div>
     </div>

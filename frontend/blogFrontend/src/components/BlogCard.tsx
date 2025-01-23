@@ -4,7 +4,7 @@ import {
   ChatBubbleOvalLeftEllipsisIcon,
 } from "@heroicons/react/16/solid";
 import { Link } from "react-router-dom";
-// Define prop types for BlogCard
+import Skeleton from "@mui/material/Skeleton";
 interface BlogCardProps {
   id: string;
   title: string;
@@ -14,6 +14,7 @@ interface BlogCardProps {
   url: string;
   likes: number;
   comments: number;
+  
 }
 
 const BlogCard: React.FC<BlogCardProps> = ({
@@ -25,7 +26,9 @@ const BlogCard: React.FC<BlogCardProps> = ({
   url,
   likes,
   comments,
+  
 }) => {
+
   return (
     <Link to="" className="blog-link" onClick={() => console.log(id)}>
       <div className="blog-card">
