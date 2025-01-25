@@ -18,15 +18,19 @@
   z-index: 10;
   width: 100%;
   background-color: white;
-  padding: 0.8em 0.6em;
+  padding: 0.8em 2em;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid rgb(213, 212, 212);
+  border-bottom: 1px solid rgb(235, 235, 235);
 }
-.nav-bar h2 a {
+
+.nav-bar h1 a {
   text-decoration: none;
+  font-family: "Times New Roman", Times, serif;
   color: black;
+  font-size: 1.8rem;
+  letter-spacing: -1px;
 }
 .nav-bar .nav-btn-container {
   display: flex;
@@ -85,7 +89,7 @@
   transition: all 0.3s;
 }
 .nav-bar .search-bar-nav:focus {
-  box-shadow: 0 0 2px rgb(44, 43, 43);
+  box-shadow: 0 0 5px rgb(120, 198, 3);
 }
 /*--- landing --- */
 
@@ -199,12 +203,11 @@ footer {
   top: 0;
 }
 
-.ul-filter-sticky {
-}
 .ul-filter li a {
   text-decoration: none;
   color: #6b6b6b;
   white-space: nowrap;
+  font-size: 14px;
 }
 .ul-filter li a:hover {
   color: black;
@@ -249,7 +252,7 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 0.8em;
-  border-bottom: 1px solid #e9e8e8;
+  border-bottom: 1px solid #efefef;
   padding: 1em 0.2em;
   margin-bottom: 0.8em;
 }
@@ -326,4 +329,68 @@ footer {
 }
 .not-found-404 a:hover {
   opacity: 0.8;
+}
+/* --- create-blog-editor--- */
+
+.ql-editor {
+  min-height: 400px;
+  border: 0;
+}
+.ql-editor:focus {
+  box-shadow: 0 0 5px rgb(132, 218, 3);
+}
+.editor-container button {
+  display: inline-block;
+}
+.ql-editor.ql-blank::before {
+  font-size: 1.2rem;
+  font-style: italic; /* Optional */
+  color: gray; /* Optional */
+  content: attr(data-placeholder);
+}
+.icon-upload {
+  height: 18px;
+  width: 18px;
+  color: white;
+}
+.flex-icon-upload {
+  padding: 0.3em 1em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  background-color: #2a73d9;
+  border: 2px solid #2a73d9;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.flex-icon-upload:hover {
+  opacity: 0.8;
+}
+.flex-icon-upload span {
+  font-size: 15px;
+}
+.form-create-blog {
+  padding: 2em 2em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.form-create-blog input {
+  border: none;
+  outline: none;
+  padding: 0.2em 0;
+}
+.form-create-blog input:focus {
+  border-bottom: 1px solid rgb(213, 213, 213);
+}
+.form-create-blog #title {
+  font-size: 2.3rem;
+}
+.form-create-blog #summary {
+  font-size: 1.1rem;
+}
+.form-create-blog select {
+  padding: 0.6em;
 }

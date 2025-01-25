@@ -8,9 +8,10 @@ import AI from "./pages/AI";
 import WebDev from "./pages/WebDev";
 import AppDev from "./pages/AppDev";
 import ForYou from "./pages/ForYou";
-import DataScience from "./pages/DataScience"
+import DataScience from "./pages/DataScience";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
+import CreateBlog from "./pages/CreateBlog";
 
 function App() {
   return (
@@ -24,11 +25,11 @@ function App() {
             <Route path="web-development" element={<WebDev />} />
             <Route path="artificial-intelligence" element={<AI />} />
             <Route path="app-development" element={<AppDev />} />
-            <Route path="data-science" element={<DataScience/>} />
-
+            <Route path="data-science" element={<DataScience />} />
           </Route>
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/create-blog" element={<CreateBlog />} />
         </Routes>
         <Footer />
       </BrowserRouter>

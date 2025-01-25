@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 const Nav: React.FC = () => {
   return (
     <nav className="nav-bar">
-      <h2>
+      <h1>
         <Link to="/">VibeWrite</Link>
-      </h2>
+      </h1>
       <form>
         <input
           type="search"
