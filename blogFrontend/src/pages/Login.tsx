@@ -1,14 +1,36 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     // Handle login logic here
-    console.log("Email:", email);
-    console.log("Password:", password);
+    try {
+      const res = await axios.post("http://localhost:8001/auth/signin", {
+        email,
+        password,
+      },{
+        withCredentials:true
+      });
+      console.log(res.data.token);
+    
+      if (res.status === 200) navigate("/home");
+      else navigate("/signup");
+    } catch (e: any) {
+      if (e.response.status === 404) {
+        console.log("user doesn't exist");
+        navigate("/signup");
+      } else if (e.response.status === 401) {
+        console.log("invalid email or password");
+      } else {
+        console.log("internal server error");
+      }
+    }
   };
 
   return (

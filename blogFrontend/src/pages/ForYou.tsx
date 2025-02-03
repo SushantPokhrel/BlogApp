@@ -1,7 +1,6 @@
 import React from "react";
 import BlogCard from "../components/BlogCard";
 import axios from "axios";
-import { Stack, Skeleton } from "@mui/material";
 import ErrorBlog from "../components/ErrorBlog";
 import BlogCardSkeleton from "../components/SkeletonUI";
 
@@ -30,6 +29,10 @@ const ForYou: React.FC = () => {
           setAllBlogs(res.data);
           setIsLoading(false);
           console.log(res.data);
+        } 
+        else {
+          setIsLoading(false) 
+          setError("error")
         }
       } catch (e) {
         setError("error");

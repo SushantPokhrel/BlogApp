@@ -17,8 +17,8 @@ const SignUp = () => {
         username,
       });
       console.log(res.status);
-      if (res.status === 201) navigate("/home");
-      else navigate("/signup");
+      if(res.status === 201) navigate("/login")
+        else navigate("/signup")
     } catch (e) {
       console.log(e);
     }

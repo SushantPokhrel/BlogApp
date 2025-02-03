@@ -6,20 +6,26 @@ const cookieParser = require("cookie-parser");
 const connectDB = require("./connection");
 const authRoutes = require("./routes/auth");
 const postRoutes = require("./routes/post");
+const verifyToken = require("./middlewares/verify");
 dotenv.config();
 
 const app = express();
 connectDB();
 
 const PORT = process.env.PORT || 8001;
-
+console.log(process.env.Secret_Key);
 app.use(
   express.urlencoded({
     extended: true,
   })
 );
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: "http://localhost:5174", // Your frontend URL
+    credentials: true, // Allow credentials (cookies, auth headers)
+  })
+);
 app.use(cookieParser());
 
 // Multer storage configuration
@@ -51,6 +57,10 @@ const upload = multer({
 
 // Routes
 app.use("/auth", authRoutes);
+app.get("/dashboard", verifyToken, (req, res) => {
+  console.log("dashboard accessed", req.user);
+  return res.json(req.user);
+});
 app.use("/post", upload.single("image"), postRoutes);
 
 app.listen(PORT, () => console.log("Listening at port " + PORT));
