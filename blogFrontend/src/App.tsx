@@ -10,8 +10,9 @@ import AppDev from "./pages/AppDev";
 import ForYou from "./pages/ForYou";
 import DataScience from "./pages/DataScience";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import "./App.css";
 import CreateBlog from "./pages/CreateBlog";
+import Test from "./pages/Test";
+import "./App.css";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/create-blog" element={<CreateBlog />} />
+          <Route path="/test" element={<Test />} />
         </Routes>
         <Footer />
       </BrowserRouter>

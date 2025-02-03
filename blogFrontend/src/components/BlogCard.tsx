@@ -11,10 +11,10 @@ interface BlogCardProps {
   content: string;
   summary: string;
   author: string;
-  url: string;
+  img: string;
   likes: number;
   comments: number;
-  
+  date:string
 }
 
 const BlogCard: React.FC<BlogCardProps> = ({
@@ -23,12 +23,11 @@ const BlogCard: React.FC<BlogCardProps> = ({
   content,
   summary,
   author,
-  url,
+  img,
   likes,
   comments,
-  
+  date
 }) => {
-
   return (
     <Link to="" className="blog-link" onClick={() => console.log(id)}>
       <div className="blog-card">
@@ -44,7 +43,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
             <h2 className="blog-title">{title}</h2>
             <p className="blog-summary">{summary}</p>
             <div className="blog-extra">
-              <span className="post-date">2025-01-20</span>{" "}
+              <span className="post-date">{date}</span>{" "}
               <div className="blog-likes-container">
                 <HandThumbUpIcon className="blog-likes sm-icon" />
                 <span className="blog-likes-count"> {likes}</span>
@@ -56,7 +55,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
             </div>
           </div>
           <div className="blog-img-container">
-            <img src={url} alt={title} className="blog-img" />
+            <img src={img} alt={title} className="blog-img" />
           </div>
         </div>
       </div>

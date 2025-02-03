@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
-
+  const navigate = useNavigate();
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     console.log(email, password, username);
@@ -16,7 +16,9 @@ const SignUp = () => {
         password,
         username,
       });
-      console.log(res);
+      console.log(res.status);
+      if (res.status === 201) navigate("/home");
+      else navigate("/signup");
     } catch (e) {
       console.log(e);
     }

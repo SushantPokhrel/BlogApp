@@ -1,10 +1,29 @@
-import { useState, useRef } from "react";
+import { useEffect } from "react";
 import QuillEditor from "react-quill";
 import "react-quill/dist/quill.snow.css";
+import { FormDataType } from "../Types";
 
-const Editor = () => {
-  const [value, setValue] = useState("");
-  const editorRef = useRef<QuillEditor>(null);
+type EditorProps = {
+  formData: FormDataType;
+  setFormData: React.Dispatch<React.SetStateAction<FormDataType>>;
+  isSubmitted: boolean;
+};
+
+const Editor: React.FC<EditorProps> = ({
+  formData,
+  setFormData,
+  isSubmitted,
+}) => {
+  function handleEditing(value: string) {
+    setFormData((prev) => ({ ...prev, content: value }));
+  }
+
+  useEffect(() => {
+    if (isSubmitted) {
+      setFormData((prev) => ({ ...prev, content: "" })); // Clear content when submitted
+    }
+  }, [isSubmitted, setFormData]);
+
   const formats = [
     "header",
     "bold",
@@ -20,13 +39,15 @@ const Editor = () => {
     "color",
     "clean",
     "code-block",
+    "font",
   ];
+
   const modules = {
     toolbar: {
       container: [
+        [{ font: ["default", "serif", "sans-serif", "monospace"] }],
         [{ header: [1, 2, 3, false] }],
         ["bold", "italic", "underline", "blockquote", "code-block"],
-
         [{ color: [] }],
         [
           { list: "ordered" },
@@ -42,27 +63,18 @@ const Editor = () => {
       matchVisual: true,
     },
   };
-  function handleEditing(value: string) {
-    // editorRef.current?.focus();
-    setValue(value);
-  }
-  function handlePost() {
-    console.log(value);
-  }
-  function imageHandler() {}
+
   return (
     <div className="editor-container">
       <QuillEditor
-        ref={editorRef}
         theme="snow"
-        value={value}
+        value={formData.content}
         formats={formats}
         modules={modules}
         onChange={handleEditing}
         className="editor"
         placeholder="Start writing..."
       />
-      <button onClick={handlePost}>Post</button>
     </div>
   );
 };

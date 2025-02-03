@@ -95,9 +95,10 @@
 
 .landing {
   max-width: 980px;
-  padding: 3em 0;
   margin: 0 auto;
   display: flex;
+  min-height: 80vh;
+  padding: 3em 0;
 }
 .landing h1 {
   font-size: 4rem;
@@ -335,6 +336,8 @@ footer {
 .ql-editor {
   min-height: 400px;
   border: 0;
+  font-size: 1.1rem;
+  color: #202020;
 }
 .ql-editor:focus {
   box-shadow: 0 0 5px rgb(132, 218, 3);
@@ -354,7 +357,7 @@ footer {
   color: white;
 }
 .flex-icon-upload {
-  padding: 0.3em 1em;
+  padding: 0.4em 1em;
   display: inline-flex;
   align-items: center;
   gap: 0.4em;
@@ -365,22 +368,25 @@ footer {
   cursor: pointer;
 }
 .flex-icon-upload:hover {
-  opacity: 0.8;
+  opacity: 0.9;
 }
 .flex-icon-upload span {
   font-size: 15px;
 }
+/* create-blog-form */
 .form-create-blog {
-  padding: 2em 2em;
+  padding: 2em 9em;
   display: flex;
   flex-direction: column;
   gap: 1em;
 }
 
-.form-create-blog input {
+.form-create-blog input[type="text"] {
   border: none;
   outline: none;
-  padding: 0.2em 0;
+  padding: 0.4em 0;
+  border-bottom: 1px solid rgb(229, 229, 229);
+  color: #383838;
 }
 .form-create-blog input:focus {
   border-bottom: 1px solid rgb(213, 213, 213);
@@ -392,5 +398,21 @@ footer {
   font-size: 1.1rem;
 }
 .form-create-blog select {
-  padding: 0.6em;
+  padding: 0.8em;
+  cursor: pointer;
+}
+
+.form-create-blog button[type="submit"] {
+  padding: 1em 0;
+  background-color: #1a8917;
+  border: 1px solid #167213;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.form-create-blog button[type="submit"]:hover {
+  background-color: #177813;
 }
